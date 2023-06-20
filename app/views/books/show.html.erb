@@ -1,0 +1,9 @@
+<div>
+  <p>タイトル：<%= @book.title %></p>
+  <p>内容：<%= @book.body %></p>
+  <p>ユーザーネーム：<%= @book.user.name %></p>
+  <p>投稿日：<%= @book.created_at.strftime('%Y/%m/%d') %></p>
+  <% if @book.user == current_user %>
+    <%= link_to "削除", book_path(@book), method: :delete %>
+  <% end %>
+</div>
